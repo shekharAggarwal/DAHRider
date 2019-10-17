@@ -93,7 +93,6 @@ public class Common {
                                 @Override
                                 public void onResponse(Call<FCMResponse> call, Response<FCMResponse> response) {
                                     if (response.body().success == 1)
-
                                         Toast.makeText(context, "Request Sent!", Toast.LENGTH_SHORT).show();
                                     else
                                         Toast.makeText(context, "Failed !", Toast.LENGTH_SHORT).show();
@@ -109,7 +108,7 @@ public class Common {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Log.d("Error", databaseError.getMessage());
             }
         });
     }
